@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<AnchorPane fx:id="rootPane"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            styleClass="island-bg"
+            fx:controller="main.ui.DashboardController">
+
+    <!-- Animated BG Canvas Layer -->
+    <Canvas fx:id="animatedBg"
+            styleClass="animated-bg-canvas"
+            AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0"
+            AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0"/>
+
+    <!-- Topbar (no change) ... -->
+    <HBox styleClass="farm-topbar" spacing="18" alignment="CENTER_LEFT"
+          AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="12.0" AnchorPane.rightAnchor="18.0">
+        <ImageView fitHeight="38" fitWidth="38">
+            <image>
+                <Image url="@/images/login.png"/>
+            </image>
+        </ImageView>
+        <Label fx:id="playerNameLabel" styleClass="farm-title" text="Farmer Name (username)"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <HBox styleClass="farm-statbar" spacing="10" alignment="CENTER">
+            <Label styleClass="icon" text="💰"/>
+            <Label fx:id="coinsLabel" styleClass="stat-label" text="0"/>
+            <Label styleClass="icon" text="💎"/>
+            <Label fx:id="gemsLabel" styleClass="stat-label" text="0"/>
+            <Label styleClass="icon" text="⭐"/>
+            <Label fx:id="xpLabel" styleClass="stat-label" text="0"/>
+            <Label styleClass="icon" text="🎖"/>
+            <Label fx:id="levelLabel" styleClass="stat-label" text="1"/>
+        </HBox>
+        <Button fx:id="profileBtn" styleClass="farm-btn-main" text="Profile" onAction="#handleProfileBtn"/>
+        <Button fx:id="messageBtn" styleClass="farm-btn-main" text="Message" onAction="#handleMessageBtn"/>
+    </HBox>
+
+    <!-- Main Content: Always centered both ways, never overlaps -->
+    <GridPane alignment="CENTER"
+              hgap="48" vgap="0"
+              AnchorPane.topAnchor="74.0" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="100.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="360" maxWidth="460"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="260" maxWidth="360"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="330" maxHeight="540" vgrow="ALWAYS" valignment="CENTER"/>
+        </rowConstraints>
+        <!-- Left (centered vertical stack) -->
+        <VBox alignment="CENTER" spacing="18" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <!-- Welcome Card -->
+            <VBox alignment="CENTER" styleClass="farm-card" maxWidth="370" minWidth="240">
+                <Label fx:id="welcomeLabel" styleClass="farmcard-welcome" text="Welcome!" />
+                <Label styleClass="farmcard-title" text="Welcome!"/>
+                <Label fx:id="rewardStatusLabel" styleClass="farmcard-stat"/>
+                <Button fx:id="dailyRewardBtn" styleClass="farm-btn-glow" text="Collect Daily Reward!" onAction="#handleCollectDailyReward"/>
+            </VBox>
+            <!-- Start Button -->
+            <Button fx:id="startGameBtn"
+                    styleClass="farm-btn-glow"
+                    text="Start"
+                    minWidth="120"
+                    maxWidth="160"
+                    onAction="#handleStartGame"/>
+        </VBox>
+        <!-- Right (Your Farm info card) -->
+        <VBox alignment="CENTER" styleClass="farm-info-card"
+              maxWidth="340" minWidth="210" maxHeight="220" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label styleClass="farmcard-title" text="Your Farm"/>
+            <HBox spacing="12" alignment="CENTER">
+                <VBox alignment="CENTER">
+                    <Label styleClass="farm-icon farm-animate-sway" text="🌾"/>
+                    <Label fx:id="cropsLabel" styleClass="farmcard-stat" text="Crops: 0"/>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Label styleClass="farm-icon farm-animate-sway" text="🐄"/>
+                    <Label fx:id="animalsLabel" styleClass="farmcard-stat" text="Animals: 0"/>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Label styleClass="farm-icon farm-animate-sway" text="🍎"/>
+                    <Label fx:id="fruitsLabel" styleClass="farmcard-stat" text="Fruits: 0"/>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Label styleClass="farm-icon farm-animate-sway" text="🐔"/>
+                    <Label fx:id="eggsLabel" styleClass="farmcard-stat" text="Eggs: 0"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </GridPane>
+    <!-- Bottom Dock Navigation: floats above bottom, more padding -->
+    <HBox styleClass="farm-dock"
+          spacing="18" alignment="CENTER"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="20.0">
+        <Button fx:id="myFarmButton" styleClass="farm-nav" text="🌾 My Farm"/>
+        <Button fx:id="barnButton" styleClass="farm-nav" text="🏠 Barn"/>
+        <Button fx:id="marketButton" styleClass="farm-nav" text="🏬 Market"/>
+        <Button fx:id="settingsBtn" styleClass="farm-nav" text="⚙ Settings" onAction="#handleOpenSettings"/>
+        <Button fx:id="logoutBtn" styleClass="farm-nav" text="🚪 Logout" onAction="#handleLogout"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@/css/dashboard_modern.css"/>
+    </stylesheets>
+</AnchorPane>

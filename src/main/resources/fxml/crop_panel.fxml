@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.ui.CropPanelController"
+      spacing="22" alignment="TOP_CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #fcffe8 0%, #f6e6b4 100%); -fx-background-radius: 32; -fx-padding: 36 54;">
+    <HBox spacing="22" alignment="CENTER_LEFT">
+        <Label text="Crops Panel" styleClass="farmcard-title"/>
+        <Label fx:id="cropsLabel" text="Crops: 0" styleClass="stat-label"/>
+    </HBox>
+    <TableView fx:id="cropTable" prefHeight="320" VBox.vgrow="ALWAYS" style="-fx-background-radius:19;">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Crop" prefWidth="120"/>
+            <TableColumn fx:id="levelCol" text="Level" prefWidth="70"/>
+            <TableColumn fx:id="amountCol" text="Amount" prefWidth="90"/>
+        </columns>
+    </TableView>
+    <HBox spacing="18" alignment="CENTER">
+        <Button fx:id="collectBtn" text="Harvest All" styleClass="farm-btn-main" onAction="#handleCollect"/>
+        <Button fx:id="fertilizeBtn" text="Fertilize All" styleClass="farm-btn-main" onAction="#handleFertilize"/>
+        <Button fx:id="upgradeBtn" text="Upgrade All" styleClass="farm-btn-main" onAction="#handleUpgrade"/>
+        <Button fx:id="closeBtn" text="Close" styleClass="farm-btn-main" onAction="#handleClose"/>
+    </HBox>
+    <Label fx:id="upgradeCostLabel"
+           style="-fx-font-size: 15px; -fx-text-fill: #3e923c; -fx-font-weight: bold;"/>
+    <Label fx:id="feedbackLabel"
+           style="-fx-font-size:15px; -fx-padding:8 0 0 0;"/>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

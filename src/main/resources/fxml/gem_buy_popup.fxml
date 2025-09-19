@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+
+<?import java.net.URL?>
+<VBox alignment="CENTER" spacing="22"
+      style="-fx-background-color: rgba(255,255,255,0.96); -fx-background-radius: 26; -fx-padding: 32 38;"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.ui.GemBuyPopupController">
+    <Label text="Buy Gems" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #257cff;" />
+    <HBox alignment="CENTER" spacing="12">
+        <Label text="Gems:" style="-fx-font-size: 18px;"/>
+        <Spinner fx:id="gemSpinner" prefWidth="90" style="-fx-font-size: 17px;"/>
+    </HBox>
+    <HBox alignment="CENTER" spacing="12">
+        <Label text="Coin Cost:" style="-fx-font-size: 18px;"/>
+        <Label fx:id="coinCostLabel" style="-fx-font-size: 18px; -fx-text-fill: #e1a700;" />
+    </HBox>
+    <Label fx:id="feedbackLabel" style="-fx-font-size: 15px; -fx-text-fill: #e74c3c;" />
+    <HBox spacing="14" alignment="CENTER">
+        <Button text="Buy" fx:id="buyBtn"
+                style="-fx-background-color: linear-gradient(to right,#80eaff,#247cff); -fx-text-fill: #fff; -fx-font-size: 18px; -fx-background-radius: 14;" />
+        <Button text="Cancel" fx:id="cancelBtn"
+                style="-fx-background-color: #fff; -fx-text-fill: #247cff; -fx-font-size: 18px; -fx-background-radius: 14;" />
+    </HBox>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

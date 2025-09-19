@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import java.net.URL?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="main.ui.SettingsController"
+      alignment="CENTER" spacing="28"
+      style="-fx-padding: 40; -fx-background-radius: 26; -fx-background-color: linear-gradient(to right, #fffbe8 0%, #ffe4b5 100%); -fx-effect: dropshadow(gaussian, #f4a25933, 14, 0.15, 0, 6);">
+    <Label text="Settings"
+           style="-fx-font-size: 32px; -fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-font-weight: 900; -fx-text-fill: #f4a259; -fx-effect: dropshadow(gaussian, #fffbe8, 7, 0.18, 0, 2);"/>
+
+    <VBox spacing="18" alignment="CENTER_LEFT" style="-fx-pref-width: 340;">
+        <CheckBox fx:id="musicCheck" text="Enable Music"
+                  style="-fx-font-size: 17px; -fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-text-fill: #443e2f;"/>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="Volume"
+                   style="-fx-font-size: 15px; -fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-text-fill: #e5c07b;"/>
+            <Slider fx:id="volumeSlider" min="0" max="100" value="60"
+                    style="-fx-pref-width: 180;"/>
+        </HBox>
+        <CheckBox fx:id="fullscreenCheck" text="Fullscreen Mode"
+                  style="-fx-font-size: 17px; -fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-text-fill: #443e2f;"/>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="Theme"
+                   style="-fx-font-size: 15px; -fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-text-fill: #e5c07b;"/>
+            <ChoiceBox fx:id="themeChoice" style="-fx-font-size: 15px; -fx-background-radius: 12;"/>
+        </HBox>
+        <!-- Add the Change Password button -->
+        <Button text="Change Password" onAction="#handleChangePassword"
+                style="-fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-font-size: 15px; -fx-background-radius: 14px; -fx-padding: 8 26 8 26; -fx-background-color: #fffbe8; -fx-border-color: #f4a259; -fx-border-width: 1.2; -fx-text-fill: #f4a259; -fx-font-weight: 600;"/>
+    </VBox>
+
+    <HBox spacing="16" alignment="CENTER" style="-fx-padding: 12 0 0 0;">
+        <Button text="Save" onAction="#handleSave"
+                styleClass="button-main"/>
+        <Button text="Close" onAction="#handleClose"
+                style="-fx-font-family: 'Poppins', 'Segoe UI', sans-serif; -fx-font-size: 17px; -fx-background-radius: 14px; -fx-padding: 8 34 8 34; -fx-background-color: #fffbe8; -fx-text-fill: #e07a5f; -fx-border-color: #f4a259; -fx-border-width: 1.2;"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

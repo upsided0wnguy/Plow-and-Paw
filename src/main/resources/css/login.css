@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+
+.root {
+    -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
+    -fx-background-color: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+}
+
+.login-panel {
+    -fx-font-family: 'Poppins', 'Segoe UI', sans-serif;
+    -fx-background-color: rgba(255, 255, 255, 0.55);
+    -fx-background-radius: 30;
+    -fx-border-color: #a8edea;
+    -fx-border-width: 2;
+    -fx-border-radius: 30;
+    -fx-padding: 40 60;
+    -fx-effect: dropshadow(gaussian, rgba(50,50,93,0.2), 30, 0.2, 0, 5);
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+/* Input Fields */
+.text-field, .password-field {
+    -fx-background-radius: 20;
+    -fx-background-color: #ffffffcc;
+    -fx-border-color: #a8edea;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 8 14;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+}
+
+/* Button Style */
+.button {
+    -fx-background-color: linear-gradient(to right, #43e97b, #38f9d7);
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.1, 0, 4);
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #38f9d7, #43e97b);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 15, 0.2, 0, 4);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+

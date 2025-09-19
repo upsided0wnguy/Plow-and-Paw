@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="main.ui.MarketController"
+           styleClass="market-panel">
+    <VBox spacing="26" alignment="TOP_CENTER">
+        <!-- Title -->
+        <Label text="Marketplace" styleClass="market-title"/>
+        <!-- Main Card -->
+        <StackPane styleClass="market-card">
+            <TabPane tabMinWidth="124" tabMaxWidth="148" tabClosingPolicy="UNAVAILABLE" styleClass="market-tab-pane">
+                <!-- Buy Tab -->
+                <Tab text="Buy">
+                    <VBox spacing="19" style="-fx-background-color:transparent;">
+                        <!-- Top Row -->
+                        <HBox spacing="18" alignment="CENTER_LEFT" style="-fx-padding: 8 0 0 8;">
+                            <Label text="Category:" styleClass="farm-card-stat"/>
+                            <ComboBox fx:id="categoryCombo" prefWidth="130" styleClass="market-combo"/>
+                            <Label text="Item:" styleClass="farm-card-stat"/>
+                            <ComboBox fx:id="itemCombo" prefWidth="130" styleClass="market-combo"/>
+                            <Label text="Qty:" styleClass="farm-card-stat"/>
+                            <Spinner fx:id="qtySpinner" prefWidth="70" styleClass="market-spinner"/>
+                            <Button fx:id="confirmBuyBtn" text="Buy" styleClass="market-btn"/>
+                        </HBox>
+                        <!-- Table -->
+                        <TableView fx:id="marketTable" prefHeight="172" styleClass="market-table">
+                            <columns>
+                                <TableColumn fx:id="itemCol" text="Item" prefWidth="120"/>
+                                <TableColumn fx:id="typeCol" text="Type" prefWidth="100"/>
+                                <TableColumn fx:id="priceCol" text="Price" prefWidth="90"/>
+                                <TableColumn fx:id="stockCol" text="Stock" prefWidth="90"/>
+                                <TableColumn fx:id="descCol" text="Description" prefWidth="238"/>
+                            </columns>
+                        </TableView>
+                        <!-- Feedback & Buy Gems -->
+                        <HBox spacing="18" alignment="CENTER_LEFT" style="-fx-padding:8 0 0 8;">
+                            <Button fx:id="buyGemsButton" text="Buy Gems" styleClass="market-action-btn"/>
+                            <Label fx:id="buyFeedbackLabel" styleClass="farm-card-stat"/>
+                        </HBox>
+                    </VBox>
+                </Tab>
+                <!-- Sell Tab -->
+                <Tab text="Sell">
+                    <VBox spacing="19" style="-fx-background-color:transparent;">
+                        <!-- Top Row -->
+                        <HBox spacing="18" alignment="CENTER_LEFT" style="-fx-padding: 8 0 0 8;">
+                            <Label text="Category:" styleClass="farm-card-stat"/>
+                            <ComboBox fx:id="sellCategoryCombo" prefWidth="130" styleClass="market-combo"/>
+                            <Label text="Item:" styleClass="farm-card-stat"/>
+                            <ComboBox fx:id="sellItemCombo" prefWidth="130" styleClass="market-combo"/>
+                            <Label text="Qty:" styleClass="farm-card-stat"/>
+                            <Spinner fx:id="sellQtySpinner" prefWidth="70" styleClass="market-spinner"/>
+                            <Button fx:id="confirmSellBtn" text="Sell" styleClass="market-btn"/>
+                        </HBox>
+                        <Label text="Your Barn Inventory (Sellable Items):"
+                               styleClass="farm-section-title"/>
+                        <ListView fx:id="marketSellList" prefHeight="112" styleClass="market-table"/>
+                        <!-- Feedback -->
+                        <HBox alignment="CENTER_LEFT" style="-fx-padding:2 0 0 8;">
+                            <Label fx:id="sellFeedbackLabel" styleClass="farm-card-stat"/>
+                        </HBox>
+                    </VBox>
+                </Tab>
+            </TabPane>
+        </StackPane>
+        <!-- Bottom Close Button -->
+        <HBox alignment="CENTER">
+            <Button fx:id="closeBtn" text="Close" styleClass="button-main"/>
+        </HBox>
+    </VBox>
+    <stylesheets>
+        <URL value="@/css/dashboard_modern.css"/>
+    </stylesheets>
+</StackPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+
+<VBox spacing="22" alignment="TOP_CENTER"
+      style="-fx-background-color: #fff; -fx-background-radius: 18; -fx-padding: 38 52;"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.ui.LoanController">
+
+    <!-- Title -->
+    <Label text="Bank Loan Center"
+           style="-fx-font-size: 28px; -fx-font-family: 'Poppins'; -fx-font-weight: bold; -fx-text-fill: #3c8222; -fx-padding: 0 0 10 0;" />
+
+    <!-- Section: Apply for Loan -->
+    <VBox spacing="12" alignment="CENTER_LEFT"
+          style="-fx-background-color:rgba(56,200,250,0.09);-fx-background-radius:16;-fx-padding:20 24;">
+        <Label text="Apply for a New Loan"
+               style="-fx-font-size: 18px; -fx-font-family: 'Poppins'; -fx-font-weight: bold; -fx-text-fill: #277cbb;" />
+        <HBox alignment="CENTER_LEFT" spacing="18">
+            <Label text="Loan Amount:" style="-fx-font-size: 18px; -fx-font-family: 'Poppins';"/>
+            <TextField fx:id="amountField" promptText="1000" prefWidth="100"
+                       style="-fx-font-size: 16px; -fx-background-radius: 12; -fx-border-radius: 12;"/>
+            <Label text="Installments:" style="-fx-font-size: 18px; -fx-font-family: 'Poppins';"/>
+            <Spinner fx:id="installmentsSpinner" prefWidth="68"
+                     style="-fx-font-size: 16px; -fx-background-radius: 12; -fx-border-radius: 12;"/>
+            <Label text="Gems Required:" style="-fx-font-size: 18px; -fx-font-family: 'Poppins';"/>
+            <Label fx:id="gemCostLabel" style="-fx-font-size: 18px; -fx-font-family: 'Poppins'; -fx-text-fill: #38a3d6;"/>
+            <Button fx:id="applyBtn" text="Apply for Loan"
+                    style="-fx-background-color: linear-gradient(to right,#6ba539,#4e7f23);-fx-text-fill:#fff;-fx-font-size:17px;-fx-font-family:'Poppins';-fx-font-weight:bold;-fx-background-radius:12; -fx-padding: 10 24;" />
+        </HBox>
+        <!-- Bonus Info -->
+        <Label text="Pay all installments on time to receive a 20% bonus!"
+               style="-fx-font-size: 15px; -fx-font-family: 'Poppins'; -fx-text-fill: #3c8222; -fx-padding: 5 0 0 0;" />
+    </VBox>
+
+    <Label fx:id="feedbackLabel"
+           style="-fx-font-size:16px;-fx-font-family:'Poppins';-fx-text-fill:#bf2c2c;-fx-padding: 4 0 0 0;" />
+
+    <Separator style="-fx-background-color: #d8d8d8; -fx-padding: 2 0;" />
+
+    <!-- Section: Active Loans -->
+    <VBox spacing="10" alignment="CENTER_LEFT"
+          style="-fx-background-color:rgba(205,173,55,0.09);-fx-background-radius:16;-fx-padding:20 24;">
+        <Label text="Your Active Loans"
+               style="-fx-font-size: 18px; -fx-font-family: 'Poppins'; -fx-font-weight: bold; -fx-text-fill: #99712d;" />
+        <ListView fx:id="loansList" prefHeight="140"
+                  style="-fx-font-size:16px;-fx-font-family:'Poppins';-fx-background-radius:11;-fx-border-radius:11;"/>
+        <HBox spacing="22" alignment="CENTER">
+            <Button fx:id="payBtn" text="Pay Installment"
+                    style="-fx-background-color: linear-gradient(to right,#6ba539,#4e7f23);-fx-text-fill:#fff;-fx-font-size:16px;-fx-font-family:'Poppins';-fx-background-radius:12; -fx-padding: 10 28;"/>
+            <Button fx:id="rewardBtn" text="Get Reward"
+                    style="-fx-background-color: linear-gradient(to right,#6ba539,#4e7f23);-fx-text-fill:#fff;-fx-font-size:16px;-fx-font-family:'Poppins';-fx-background-radius:12; -fx-padding: 10 28;"/>
+        </HBox>
+    </VBox>
+
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

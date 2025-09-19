@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.canvas.Canvas?>
+<?import java.net.URL?>
+<AnchorPane fx:id="rootPane"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.ui.FarmGameController"
+            style="-fx-background-color: linear-gradient(to bottom right, #fcf4e3, #f7e9d7);">
+
+    <!-- Main Game Viewport -->
+    <Pane fx:id="viewport"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.topAnchor="0"
+          AnchorPane.rightAnchor="0"
+          AnchorPane.bottomAnchor="0">
+        <Canvas fx:id="gameCanvas"
+                width="1200"
+                height="800"
+                pickOnBounds="true"/>
+    </Pane>
+
+    <!-- Edit Mode Overlay (ALWAYS mouseTransparent) -->
+    <Pane fx:id="mapEditOverlay"
+          visible="false"
+          mouseTransparent="true"
+          pickOnBounds="false"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.topAnchor="0"
+          AnchorPane.rightAnchor="0"
+          AnchorPane.bottomAnchor="0"
+          style="-fx-background-color: rgba(81,120,36,0.17); -fx-background-radius: 22; -fx-border-color: #A9D24B; -fx-border-width: 2;">
+        <Label fx:id="mapEditModeLabel"
+               alignment="CENTER"
+               layoutY="42"
+               layoutX="0"
+               prefWidth="900"
+               prefHeight="66"
+               text=""
+               style="-fx-font-size: 28px; -fx-font-family: 'Poppins'; -fx-font-weight: bold; -fx-text-fill: #5f8815; -fx-effect: dropshadow(gaussian, #f0ffd1, 8, 0.19, 0, 2);"
+               AnchorPane.leftAnchor="0"
+               AnchorPane.rightAnchor="0"/>
+    </Pane>
+
+    <!-- Top Resource Bar -->
+    <StackPane alignment="CENTER"
+               AnchorPane.topAnchor="24"
+               AnchorPane.leftAnchor="0"
+               AnchorPane.rightAnchor="0">
+        <Pane prefHeight="56" maxWidth="670"
+              style="-fx-background-color: rgba(220,241,209,0.42); -fx-background-radius: 19; -fx-effect: dropshadow(gaussian,#c5e3b4,9,0.18,0,2);" />
+        <HBox alignment="CENTER" spacing="38" style="-fx-padding: 9 56;">
+            <Label fx:id="playersLabel"
+                   text="Players: "
+                   styleClass="dashboard-title"/>
+            <HBox spacing="24" alignment="CENTER">
+                <HBox alignment="CENTER" spacing="7">
+                    <ImageView fx:id="coinIcon" fitHeight="24" fitWidth="24"/>
+                    <Label fx:id="coinLabel" text="0" styleClass="resource-label-gold"/>
+                </HBox>
+                <HBox alignment="CENTER" spacing="7">
+                    <ImageView fx:id="gemIcon" fitHeight="24" fitWidth="24"/>
+                    <Label fx:id="gemLabel" text="0" styleClass="resource-label-gem"/>
+                </HBox>
+                <HBox alignment="CENTER" spacing="7">
+                    <ImageView fx:id="xpIcon" fitHeight="24" fitWidth="24"/>
+                    <Label fx:id="xpLabel" text="0" styleClass="resource-label-xp"/>
+                </HBox>
+            </HBox>
+        </HBox>
+    </StackPane>
+
+    <!-- Floating Right Sidebar Navigation -->
+    <AnchorPane>
+        <Button fx:id="dashboardButton" text="Dashboard" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="110"/>
+        <Button fx:id="barnTopButton" text="Barn" onAction="#handleShowBarn" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="178"/>
+        <Button fx:id="marketButton" text="Market" onAction="#handleMarket" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="246"/>
+        <Button fx:id="loanButton" text="Loan" onAction="#handleShowLoan" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="314"/>
+        <Button fx:id="buyGemsButton" text="Buy Gems" onAction="#handleBuyGems" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="382"/>
+        <Button fx:id="tilePickerButton" text="Tile Picker" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="450"/>
+        <Button fx:id="saveMapButton" text="Save Map" onAction="#handleSaveMap" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="518"/>
+        <Button fx:id="exitButton" text="Exit" styleClass="button-main"
+                AnchorPane.rightAnchor="50" AnchorPane.topAnchor="586"/>
+    </AnchorPane>
+
+    <!-- Bottom Centered Action Bar -->
+    <HBox alignment="CENTER" spacing="30"
+          AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0"
+          AnchorPane.bottomAnchor="36">
+        <Button fx:id="animalButton" text="Animals" onAction="#handleAnimals" styleClass="quick-actions-btn"/>
+        <Button fx:id="fishButton" text="Fish" onAction="#handleFish" styleClass="quick-actions-btn"/>
+        <Button fx:id="cropButton" text="Crops" onAction="#handleCrops" styleClass="quick-actions-btn"/>
+        <Button fx:id="fruitButton" text="Fruits" onAction="#handleFruits" styleClass="quick-actions-btn"/>
+        <Button fx:id="flowerButton" text="Flowers" onAction="#handleFlowers" styleClass="quick-actions-btn"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</AnchorPane>

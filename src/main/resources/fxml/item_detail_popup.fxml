@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.ui.ItemDetailPopupController"
+      spacing="20" alignment="CENTER"
+      style="-fx-background-color:linear-gradient(to bottom,#fcffe8 0%,#f6e6b4 100%);-fx-background-radius:32;-fx-padding:34;">
+    <Label fx:id="titleLabel" styleClass="farmcard-title"/>
+    <Label fx:id="itemNameLabel" styleClass="farmcard-stat"/>
+    <Label fx:id="itemLevelLabel" styleClass="stat-label"/>
+    <Label fx:id="itemAmountLabel" styleClass="stat-label"/>
+    <Label fx:id="itemProductLabel" styleClass="stat-label"/>
+    <HBox spacing="16" alignment="CENTER">
+        <Button fx:id="collectBtn" text="Collect" styleClass="farm-btn-main"/>
+        <Button fx:id="feedBtn" text="Feed/Water/Fertilize" styleClass="farm-btn-main"/>
+        <Button fx:id="plantBtn" text="Plant" styleClass="farm-btn-main"/>
+        <Button fx:id="upgradeBtn" text="Upgrade" styleClass="farm-btn-main"/>
+        <Button fx:id="sellBtn" text="Sell" styleClass="farm-btn-main"/>
+        <Button fx:id="closeBtn" text="Close" styleClass="farm-btn-main"/>
+    </HBox>
+    <Label fx:id="upgradeCostLabel"
+           style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #4e7f23;"/>
+    <Label fx:id="feedbackLabel"
+           style="-fx-font-size: 15px; -fx-text-fill: #bf2c2c;" alignment="CENTER"/>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

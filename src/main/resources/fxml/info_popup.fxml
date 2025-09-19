@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.Image?>
+<?import java.net.URL?>
+<StackPane xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="main.ui.InfoPopupController"
+           styleClass="farm-info-popup-root">
+    <VBox alignment="CENTER" spacing="24" styleClass="farm-info-popup-card">
+        <HBox alignment="CENTER_LEFT" spacing="18" styleClass="farm-info-popup-titlebar">
+            <ImageView fitHeight="38" fitWidth="38">
+                <image>
+                    <Image url="@/images/info.png"/>
+                </image>
+            </ImageView>
+            <Label fx:id="titleLabel" text="Message" styleClass="farmcard-title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="closeBtn" text="✖" styleClass="farm-close-btn" onAction="#handleClose"/>
+        </HBox>
+        <Label fx:id="messageLabel" wrapText="true" styleClass="farm-info-popup-message"/>
+        <Button fx:id="okBtn" text="OK" styleClass="farm-btn-main" onAction="#handleClose" maxWidth="110"/>
+    </VBox>
+    <stylesheets>
+        <URL value="@/css/dashboard_modern.css"/>
+    </stylesheets>
+</StackPane>

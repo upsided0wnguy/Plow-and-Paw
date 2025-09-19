@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.ui.BarnPanelController"
+      spacing="22" alignment="TOP_CENTER"
+      style="-fx-background-color: linear-gradient(to bottom, #fcffe8 0%, #f6e6b4 100%); -fx-background-radius: 32; -fx-padding: 36 54;">
+    <HBox spacing="22" alignment="CENTER_LEFT" style="-fx-padding: 0 0 0 6;">
+        <Label fx:id="barnLevelLabel" text="Barn Level: 1"
+               styleClass="farmcard-title"/>
+        <Label text="Capacity:" style="-fx-font-size:16px; -fx-text-fill:#6fa23b;"/>
+        <Label fx:id="barnCapLabel" text="0 / 50"
+               styleClass="farmcard-stat"/>
+        <HBox spacing="12" alignment="CENTER">
+            <Label fx:id="cropsLabel"   text="Crops: 0"   styleClass="stat-label"/>
+            <Label fx:id="animalsLabel" text="Animals: 0" styleClass="stat-label"/>
+            <Label fx:id="fruitsLabel"  text="Fruits: 0"  styleClass="stat-label"/>
+            <Label fx:id="flowersLabel" text="Flowers: 0" styleClass="stat-label"/>
+            <Label fx:id="fishLabel"    text="Fish: 0"    styleClass="stat-label"/>
+            <Label fx:id="eggsLabel"    text="Eggs: 0"    styleClass="stat-label"/>
+        </HBox>
+    </HBox>
+    <TableView fx:id="elementTable" prefHeight="320" VBox.vgrow="ALWAYS" style="-fx-background-radius:19;">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Item" prefWidth="150"/>
+            <TableColumn fx:id="levelCol" text="Level" prefWidth="70"/>
+            <TableColumn fx:id="amountCol" text="Amount" prefWidth="90"/>
+        </columns>
+    </TableView>
+    <HBox spacing="18" alignment="CENTER">
+        <Button fx:id="upgradeBarnBtn" text="Upgrade Barn" styleClass="farm-btn-main" onAction="#handleUpgrade"/>
+        <Button fx:id="removeBtn" text="Remove Item" styleClass="farm-btn-main" onAction="#handleRemove"/>
+        <Button fx:id="closeBtn" text="Close" styleClass="farm-btn-main" onAction="#handleClose"/>
+    </HBox>
+    <Label fx:id="upgradeCostLabel"
+           style="-fx-font-size: 15px; -fx-text-fill: #3e923c; -fx-font-weight: bold;"/>
+    <Label fx:id="feedbackLabel"
+           style="-fx-font-size:15px; -fx-padding:8 0 0 0;"/>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

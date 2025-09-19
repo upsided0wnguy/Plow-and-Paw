@@ -1,0 +1,399 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+
+/* Root & Background */
+.root, .scene, .island-bg {
+    -fx-font-family: 'Poppins';
+    -fx-background-color: linear-gradient(to bottom, #fcffe8 0%, #f6e6b4 100%);
+}
+
+/* Top Bar */
+.farm-topbar {
+    -fx-background-color: rgba(235,255,220, 0.89);
+    -fx-background-radius: 32;
+    -fx-padding: 18 38;
+    -fx-effect: dropshadow(gaussian, #bfe7a7bb, 14, 0.22, 0, 5);
+}
+.farm-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #39761f;
+    -fx-effect: dropshadow(gaussian, #e0ffb8, 2, 0.20, 0, 2);
+}
+.farm-statbar .icon {
+    -fx-font-size: 19px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4e7f23;
+}
+.stat-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #678c3b;
+    -fx-padding: 0 12 0 3;
+}
+
+/* GLASSY CARD PANELS */
+.farm-card, .farm-info-card, .farm-info-card-glassy {
+    -fx-background-color: rgba(255,255,255,0.38); /* transparent, no glassy buttons */
+    -fx-background-radius: 38;
+    -fx-padding: 40 54;
+    -fx-effect: dropshadow(gaussian, #b5eccfa8, 40, 0.29, 0, 14);
+    -fx-border-width: 0;
+}
+.farm-info-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(235,255,215,0.36) 80%, rgba(195,250,187,0.27) 100%);
+    -fx-background-radius: 38;
+    -fx-padding: 40 54;
+    -fx-effect: dropshadow(gaussian, #a5ffb288, 39, 0.21, 0, 14);
+    -fx-border-width: 0;
+}
+.farm-card {
+    -fx-background-color: linear-gradient(to bottom, rgba(254,255,244,0.38) 86%, rgba(229,255,211,0.23) 100%);
+    -fx-background-radius: 38;
+    -fx-padding: 38 50;
+    -fx-effect: dropshadow(gaussian, #b0efb3bb, 32, 0.22, 0, 11);
+    -fx-border-width: 0;
+}
+.farm-info-card-glassy {
+    -fx-background-color: linear-gradient(to bottom right, rgba(240,255,233,0.43) 80%, rgba(222,245,223,0.32) 100%);
+    -fx-background-radius: 42;
+    -fx-effect: dropshadow(gaussian, #d7ffeca8, 41, 0.25, 0, 14);
+    -fx-padding: 48 64;
+    -fx-border-width: 0;
+}
+.farmcard-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #379824;
+    -fx-effect: dropshadow(gaussian, #d5ffb7, 4, 0.18, 0, 2);
+}
+.farmcard-stat {
+    -fx-font-size: 18px;
+    -fx-text-fill: #2c662a;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 6 0;
+}
+.farm-icon {
+    -fx-font-size: 36px;
+    -fx-text-fill: #38801f;
+    -fx-effect: dropshadow(gaussian, #baffbb, 3, 0.14, 0, 1);
+}
+
+/* BUTTONS */
+/* Main button style (NO glass, looks like dock/nav buttons) */
+.farm-btn-main {
+    -fx-background-radius: 18;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-background-color: linear-gradient(to bottom, #9eda4c 0%, #6fc237 100%);
+    -fx-effect: dropshadow(gaussian, #aadf63aa, 7, 0.11, 0, 1);
+    -fx-padding: 16 38;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.farm-btn-main:hover {
+    -fx-background-color: linear-gradient(to top, #a7ec63 80%, #54af18 100%);
+    -fx-text-fill: #fff;
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+}
+.farm-btn-main:pressed {
+    -fx-background-color: #c9eebc;
+    -fx-text-fill: #8fc887;
+}
+
+/* Glow/Yellow "Start" and Daily Reward buttons */
+.farm-btn-glow {
+    -fx-background-color: linear-gradient(to bottom, #ffe066 78%, #ffc233 100%);
+    -fx-background-radius: 19;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #443307;
+    -fx-padding: 16 48;
+    -fx-effect: dropshadow(gaussian, #ffe066bb, 18, 0.22, 0, 7),
+                innershadow(gaussian, #ffffff44, 8, 0.12, 0, 0);
+    -fx-cursor: hand;
+}
+.farm-btn-glow:hover {
+    -fx-background-color: linear-gradient(to bottom, #fff18a 68%, #ffd564 100%);
+    -fx-effect: dropshadow(gaussian, #fff18a99, 20, 0.26, 0, 7);
+}
+
+/* Dock Navigation: (No glass, only soft green) */
+.farm-dock {
+    -fx-background-color: linear-gradient(to bottom, #daf8b7 60%, #d3f3bb 100%);
+    -fx-background-radius: 28;
+    -fx-padding: 15 34;
+    -fx-effect: dropshadow(gaussian, #c2e59c88, 11, 0.13, 0, 5);
+}
+.farm-nav {
+    -fx-font-size: 15px;
+    -fx-background-radius: 19;
+    -fx-background-color: linear-gradient(to bottom, #bbe882 30%, #a6d660 100%);
+    -fx-text-fill: #38741f;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, #f5f9b933, 6, 0.12, 0, 3);
+    -fx-padding: 10 28;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.farm-nav:hover {
+    -fx-background-color: linear-gradient(to bottom, #a6d660, #6fc237);
+    -fx-text-fill: #fff;
+}
+
+/* Event Banner */
+.farm-event-banner {
+    -fx-background-radius: 15;
+    -fx-background-color: linear-gradient(to right, #afe66b, #d9fba7 70%);
+    -fx-padding: 10 30;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3c7012;
+    -fx-effect: dropshadow(gaussian, #bfd27355, 5, 0.12, 0, 1);
+}
+
+/* Responsive paddings for main area cards */
+.farm-card, .farm-info-card {
+    -fx-padding: 36 46;
+}
+
+/* Animations (marker, real anims are JavaFX Timeline) */
+.farm-animate-sway {}
+
+/* Smoother transitions for hover and press */
+.farm-btn-main, .farm-btn-glow, .farm-nav {
+    -fx-transition: all 0.17s;
+}
+
+.farm-card, .farm-info-card {
+    -fx-padding: 18 22;
+    -fx-background-radius: 22;
+    /* ...keep the rest... */
+}
+.farmcard-title {
+    -fx-font-size: 1.2em;
+}
+
+.farm-dock {
+    -fx-background-color: linear-gradient(to bottom, #daf8b7 60%, #d3f3bb 100%);
+    -fx-background-radius: 28;
+    -fx-padding: 21 38 21 38; /* Top, Right, Bottom, Left: more padding! */
+    -fx-effect: dropshadow(gaussian, #c2e59c88, 13, 0.14, 0, 6);
+    /* ...rest of your styles... */
+}
+
+.farm-event-banner {
+    -fx-background-radius: 15;
+    -fx-background-color: linear-gradient(to right, #afe66b, #d9fba7 70%);
+    -fx-padding: 16 38 16 38; /* More vertical padding for event banner */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3c7012;
+    -fx-effect: dropshadow(gaussian, #bfd27355, 5, 0.13, 0, 1);
+}
+.farm-info-popup-root {
+    -fx-background-color: transparent;
+    -fx-padding: 48 32 48 32;
+}
+
+.farm-info-popup-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(250,255,230,0.89), rgba(201,255,200,0.72));
+    -fx-background-radius: 29;
+    -fx-effect: dropshadow(gaussian, #b0efb3bb, 26, 0.21, 0, 11);
+    -fx-padding: 40 44 32 44;
+    -fx-spacing: 24;
+}
+
+.farm-info-popup-titlebar {
+    -fx-padding: 0 0 12 0;
+}
+
+.farm-info-popup-message {
+    -fx-font-size: 20px;
+    -fx-text-fill: #337733;
+    -fx-font-family: 'Poppins';
+    -fx-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.farm-close-btn {
+    -fx-background-color: transparent;
+    -fx-font-size: 21px;
+    -fx-text-fill: #a4a4a4;
+    -fx-cursor: hand;
+    -fx-background-radius: 11;
+    -fx-padding: 3 13 3 13;
+}
+.farm-close-btn:hover {
+    -fx-background-color: #ffe06644;
+    -fx-text-fill: #c03d1e;
+}
+.market-panel, .market-card, .market-main {
+    -fx-background-color: linear-gradient(to bottom right, #fcffe8 85%, #eafdcb 100%);
+    -fx-background-radius: 26;
+    -fx-padding: 36 44;
+    -fx-effect: dropshadow(gaussian, #b5e08a44, 16, 0.15, 0, 6);
+}
+.market-title {
+    -fx-font-size: 32px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: 900;
+    -fx-text-fill: #237c2c;
+    -fx-effect: dropshadow(gaussian, #eafdcb, 4, 0.19, 0, 2);
+    -fx-padding: 0 0 22 0;
+}
+.market-tab-pane .tab-header-background {
+    -fx-background-color: transparent;
+}
+.market-tab {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-background-color: #f8fff4;
+    -fx-background-radius: 13 13 0 0;
+}
+.market-btn, .market-action-btn {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: #fff;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-padding: 9 34;
+    -fx-effect: dropshadow(gaussian, #97d96344, 7, 0, 0, 2);
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+.market-btn:hover, .market-action-btn:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+}
+.market-table, .farm-table, .settings-table {
+    -fx-background-radius: 16;
+    -fx-background-color: #fbffe7;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+}
+.market-spinner, .farm-spinner, .settings-spinner {
+    -fx-background-radius: 11;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+    -fx-border-color: #b5e08a;
+    -fx-border-radius: 11;
+}
+.market-combo {
+    -fx-background-radius: 10;
+    -fx-font-size: 17px;
+    -fx-font-family: 'Poppins';
+    -fx-padding: 8 16;
+}
+.button-main, .farm-btn-main {
+    -fx-background-radius: 19;
+    -fx-background-insets: 0;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-padding: 12 32;
+    -fx-text-fill: #38741f;
+    -fx-background-color: linear-gradient(to bottom, #bbe882 20%, #a6d660 100%);
+    -fx-effect: dropshadow(gaussian, #f5f9b933, 7, 0.15, 0, 2);
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-transition: all 0.14s;
+}
+.button-main:hover, .farm-btn-main:hover {
+    -fx-background-color: linear-gradient(to bottom, #a6d660, #6fc237 98%);
+    -fx-text-fill: #fff;
+    -fx-scale-x: 1.055;
+    -fx-scale-y: 1.055;
+}
+.button-main:pressed, .farm-btn-main:pressed {
+    -fx-background-color: #c8e89c;
+    -fx-text-fill: #7ea543;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+.farm-section-title {
+    -fx-font-size: 19px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: 900;
+    -fx-text-fill: #99712d;
+    -fx-padding: 0 0 8 0;
+}
+.farm-card-stat {
+    -fx-font-size: 17px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: 700;
+    -fx-text-fill: #2c662a;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+.auth-title {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 32px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #237c2c;
+    -fx-effect: dropshadow(gaussian, #eafdcb, 3, 0.16, 0, 1);
+}
+.auth-subtitle {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+    -fx-text-fill: #668153;
+}
+.text-field, .password-field {
+    -fx-font-family: 'Poppins';
+    -fx-background-radius: 10;
+    -fx-font-size: 16px;
+    -fx-background-color: #f9fdf5;
+    -fx-border-color: #b5e08a;
+    -fx-border-radius: 10;
+    -fx-padding: 10 14;
+}
+.button-main {
+    -fx-background-radius: 18;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-effect: dropshadow(gaussian, #97d96344, 8, 0, 0, 2);
+    -fx-padding: 9 34;
+}
+.button-main:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+    -fx-text-fill: #fff;
+}
+.link {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 13.5px;
+    -fx-text-fill: #47af31;
+}
+.auth-error {
+    -fx-text-fill: #c22b1f;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Poppins';
+    -fx-padding: 3 0 0 0;
+}
+.auth-left {
+    -fx-background-color: transparent;
+}
+.auth-panel-right {
+    -fx-background-color: linear-gradient(to bottom right, #f7ffea 60%, #f5ffe6 100%);
+    -fx-background-radius: 38;
+    -fx-effect: dropshadow(gaussian, #cce4aa, 32, 0.22, 0, 12);
+}
+.image-glow {
+    -fx-effect: dropshadow(gaussian, #cce4aa, 20, 0.3, 0, 0);
+}
+.hint-text {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 13.5px;
+    -fx-text-fill: #778765;
+}
+

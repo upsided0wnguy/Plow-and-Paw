@@ -1,0 +1,37 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="main.ui.SettingsController"
+      styleClass="settings-panel"
+      alignment="CENTER" spacing="24">
+
+    <Label text="Settings" styleClass="section-title"/>
+
+    <VBox spacing="18" alignment="CENTER_LEFT" style="-fx-pref-width: 340;">
+        <CheckBox fx:id="musicCheck" text="Enable Music"/>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="Volume"/>
+            <Slider fx:id="volumeSlider" min="0" max="100" value="60"/>
+        </HBox>
+        <CheckBox fx:id="fullscreenCheck" text="Fullscreen Mode"/>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Label text="Theme"/>
+            <ChoiceBox fx:id="themeChoice"/>
+        </HBox>
+        <Button text="Change Password" onAction="#handleChangePassword"/>
+    </VBox>
+
+    <HBox spacing="16" alignment="CENTER">
+        <Button text="Save" onAction="#handleSave" styleClass="button-main"/>
+        <Button text="Close" onAction="#handleClose"/>
+    </HBox>
+
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

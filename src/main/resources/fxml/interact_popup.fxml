@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.ui.InteractPopupController"
+      spacing="18" alignment="CENTER"
+      style="-fx-padding: 34; -fx-background-radius: 22;">
+    <Label fx:id="titleLabel" style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
+    <Label fx:id="descLabel" style="-fx-font-size: 20px;"/>
+    <HBox spacing="24" alignment="CENTER">
+        <Button fx:id="collectButton" text="Collect" styleClass="button-main"/>
+        <Button fx:id="feedButton" text="Feed/Water/Fertilize" styleClass="button-main"/>
+        <Button fx:id="upgradeButton" text="Upgrade" styleClass="button-main"/>
+        <Button fx:id="closeButton" text="Close" styleClass="button-main"/>
+    </HBox>
+    <!-- Show upgrade cost always, under the buttons -->
+    <Label fx:id="upgradeCostLabel"
+           style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #4e7f23;"/>
+    <Label fx:id="feedbackLabel"
+           style="-fx-font-size: 15px; -fx-text-fill: #bf2c2c;" alignment="CENTER"/>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

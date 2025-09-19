@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="12" alignment="CENTER" styleClass="popup-panel">
+
+    <Label text="Batch Actions" styleClass="popup-title"/>
+
+    <Button text="Collect from All Animals" fx:id="batchCollectBtn" styleClass="popup-button"/>
+    <Button text="Feed All Animals" fx:id="batchFeedBtn" styleClass="popup-button"/>
+    <Button text="Upgrade All Animals" fx:id="batchUpgradeBtn" styleClass="popup-button"/>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

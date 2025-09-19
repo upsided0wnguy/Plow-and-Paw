@@ -1,0 +1,436 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf');
+}
+
+
+.image-glow {
+    -fx-effect: dropshadow(gaussian, #cce4aa, 20, 0.3, 0, 0);
+}
+
+.settings-panel, .message-panel, .inventory-panel {
+    -fx-background-color: #ffffff;
+    -fx-padding: 24 32;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, #c2e59c, 8, 0.15, 0, 2);
+    -fx-font-size: 14px;
+    -fx-text-fill: #2a3d1f;
+    -fx-spacing: 16;
+    -fx-translate-y: 12;
+}
+
+.settings-panel Label, .message-panel Label, .inventory-panel Label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a3d1f;
+    -fx-font-size: 16px;
+    -fx-padding: 8 0;
+}
+
+.settings-panel TextField, .message-panel TextField, .inventory-panel TextField,
+.settings-panel ChoiceBox, .message-panel ChoiceBox, .inventory-panel ChoiceBox {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #a5d65a;
+    -fx-border-radius: 8;
+    -fx-padding: 8 12;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2c471a;
+    -fx-background-radius: 8;
+}
+
+.settings-panel Button, .message-panel Button, .inventory-panel Button {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 20;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.message-panel ScrollPane, .inventory-panel ScrollPane {
+    -fx-background-color: transparent;
+    -fx-border-color: #a5d65a;
+    -fx-border-radius: 12;
+    -fx-padding: 6;
+}
+
+.message-bubble {
+    -fx-background-color: #e0f7d9;
+    -fx-background-radius: 14;
+    -fx-padding: 10 14;
+    -fx-text-fill: #1a2f10;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, #c2e59c55, 4, 0.14, 0, 1);
+    -fx-max-width: 360;
+}
+
+.message-meta {
+    -fx-font-size: 10px;
+    -fx-text-fill: #648b3f;
+    -fx-padding: 2 0 0 0;
+    -fx-alignment: bottom-right;
+    -fx-opacity: 0.8;
+}
+
+.message-sender-circle {
+    -fx-background-color: #6ba539;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 100;
+    -fx-padding: 6;
+    -fx-alignment: center;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+    -fx-max-width: 28;
+    -fx-max-height: 28;
+}
+
+.button-main {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-padding: 10 24;
+    -fx-effect: dropshadow(gaussian, #4e7f2344, 5, 0.18, 0, 2);
+}
+
+.barn-main-btn {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 19;
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, #4e7f2344, 8, 0.15, 0, 4);
+}
+/* === GLOBAL BUTTON STYLE FOR ALL BUTTONS === */
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+
+/* Universal Button Style for Game (same as bottom panel everywhere) */
+.button-main, .farm-btn-main, .farm-nav, .sidebar-btn, .settings-panel Button, .inventory-panel Button, .profile-panel Button, .market-btn, .dashboard-btn, .popup-btn, .dialog-btn, .barn-main-btn, .quick-actions-btn, .message-panel Button, .auth-panel Button, .game-action-btn, .confirm-btn, .custom-main-btn {
+    -fx-background-radius: 19;
+    -fx-background-insets: 0;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-padding: 12 32;
+    -fx-text-fill: #38741f;
+    -fx-background-color: linear-gradient(to bottom, #bbe882 20%, #a6d660 100%);
+    -fx-effect: dropshadow(gaussian, #f5f9b933, 7, 0.15, 0, 2);
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-transition: all 0.14s;
+}
+.button-main:hover, .farm-btn-main:hover, .farm-nav:hover, .sidebar-btn:hover, .settings-panel Button:hover, .inventory-panel Button:hover, .profile-panel Button:hover, .market-btn:hover, .dashboard-btn:hover, .popup-btn:hover, .dialog-btn:hover, .barn-main-btn:hover, .quick-actions-btn:hover, .message-panel Button:hover, .auth-panel Button:hover, .game-action-btn:hover, .confirm-btn:hover, .custom-main-btn:hover {
+    -fx-background-color: linear-gradient(to bottom, #a6d660, #6fc237 98%);
+    -fx-text-fill: #fff;
+    -fx-scale-x: 1.055;
+    -fx-scale-y: 1.055;
+}
+.button-main:pressed, .farm-btn-main:pressed, .farm-nav:pressed, .sidebar-btn:pressed, .settings-panel Button:pressed, .inventory-panel Button:pressed, .profile-panel Button:pressed, .market-btn:pressed, .dashboard-btn:pressed, .popup-btn:pressed, .dialog-btn:pressed, .barn-main-btn:pressed, .quick-actions-btn:pressed, .message-panel Button:pressed, .auth-panel Button:pressed, .game-action-btn:pressed, .confirm-btn:pressed, .custom-main-btn:pressed {
+    -fx-background-color: #c8e89c;
+    -fx-text-fill: #7ea543;
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+}
+
+/* Optional: for buttons with emoji icons, fix alignment and add spacing */
+.button-main .graphic, .farm-btn-main .graphic, .farm-nav .graphic {
+    -fx-padding: 0 8 0 0;
+    -fx-font-size: 19px;
+}
+
+.button-main:focused, .farm-btn-main:focused, .farm-nav:focused {
+    -fx-effect: dropshadow(gaussian, #97d96366, 8, 0.15, 0, 2);
+}
+
+.button-main[disabled], .farm-btn-main[disabled], .farm-nav[disabled] {
+    -fx-background-color: #d7e8ca;
+    -fx-text-fill: #a2bc86;
+    -fx-opacity: 0.65;
+    -fx-cursor: default;
+}
+
+/* For backward compatibility: reset any other previous gradients/styles */
+.button-main, .farm-btn-main, .farm-nav, .sidebar-btn, .settings-panel Button, .inventory-panel Button, .profile-panel Button, .market-btn, .dashboard-btn, .popup-btn, .dialog-btn, .barn-main-btn, .quick-actions-btn, .message-panel Button, .auth-panel Button, .game-action-btn, .confirm-btn, .custom-main-btn {
+    -fx-border-color: transparent;
+}
+
+/* If you want: let you use .button-main everywhere, or just keep your old classes on your FXML buttons. */
+
+/* ==== END GLOBAL BUTTONS ==== */
+.profile-card-glass {
+    -fx-background-color: rgba(255,255,255,0.85), linear-gradient(to bottom right, #eafdcbcc 80%, #eafde5cc 100%);
+    -fx-background-radius: 36;
+    -fx-padding: 40 42;
+    -fx-effect: dropshadow(gaussian, #b2f0b488, 19, 0.22, 0, 5);
+}
+.profile-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #377e20;
+    -fx-effect: dropshadow(gaussian, #e6f9bb, 3, 0.17, 0, 1);
+}
+.profile-username {
+    -fx-font-size: 15px;
+    -fx-text-fill: #659d52;
+    -fx-padding: 0 0 6 0;
+}
+.profile-stat-label {
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4d8428;
+}
+.profile-stat-value {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #239146;
+    -fx-padding: 0 10 0 2;
+}
+.profile-avatar-glow {
+    -fx-background-radius: 100;
+    -fx-effect: dropshadow(gaussian, #dbffb1cc, 24, 0.20, 0, 5);
+}
+.avatar-border {
+    -fx-background-radius: 100;
+    -fx-border-color: #baffbb;
+    -fx-border-width: 4;
+    -fx-min-width: 120;
+    -fx-min-height: 120;
+    -fx-max-width: 120;
+    -fx-max-height: 120;
+    -fx-background-color: transparent;
+    -fx-effect: dropshadow(gaussian, #eafdcb, 6, 0.15, 0, 2);
+    -fx-translate-y: -112;
+}
+.profile-card-glass {
+    -fx-background-color: rgba(255,255,255,0.85), linear-gradient(to bottom right, #eafdcbcc 80%, #eafde5cc 100%);
+    -fx-background-radius: 34;
+    -fx-padding: 36 34;
+    -fx-effect: dropshadow(gaussian, #b2f0b488, 18, 0.19, 0, 6);
+}
+.profile-title {
+    -fx-font-size: 27px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #377e20;
+    -fx-effect: dropshadow(gaussian, #e6f9bb, 3, 0.17, 0, 1);
+}
+.profile-username {
+    -fx-font-size: 14.5px;
+    -fx-text-fill: #659d52;
+    -fx-padding: 0 0 6 0;
+}
+.profile-stat-label {
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4d8428;
+}
+.profile-stat-value {
+    -fx-font-size: 19px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #239146;
+    -fx-padding: 0 10 0 2;
+}
+.profile-avatar-glow
+
+
+.market-panel, .market-card, .market-main {
+    -fx-background-color: linear-gradient(to bottom right, #fcffe8 85%, #eafdcb 100%);
+    -fx-background-radius: 26;
+    -fx-padding: 36 44;
+    -fx-effect: dropshadow(gaussian, #b5e08a44, 16, 0.15, 0, 6);
+}
+.market-title {
+    -fx-font-size: 32px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: 900;
+    -fx-text-fill: #237c2c;
+    -fx-effect: dropshadow(gaussian, #eafdcb, 4, 0.19, 0, 2);
+    -fx-padding: 0 0 22 0;
+}
+.market-tab {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-background-color: #f8fff4;
+    -fx-background-radius: 13 13 0 0;
+}
+.market-btn, .market-action-btn {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: #fff;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-padding: 9 34;
+    -fx-effect: dropshadow(gaussian, #97d96344, 7, 0, 0, 2);
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+.market-btn:hover, .market-action-btn:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+}
+
+.farm-main-panel, .farm-glass-card {
+    -fx-background-color: linear-gradient(to bottom right, #fcffe8 70%, #eafdcb 100%);
+    -fx-background-radius: 34;
+    -fx-effect: dropshadow(gaussian, #b5e08a44, 18, 0.19, 0, 6);
+    -fx-padding: 38 42;
+}
+.farm-section-title {
+    -fx-font-size: 29px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: 900;
+    -fx-text-fill: #379824;
+    -fx-effect: dropshadow(gaussian, #eafdcb, 3, 0.15, 0, 2);
+}
+.farm-card-stat {
+    -fx-font-size: 19px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: 700;
+    -fx-text-fill: #2c662a;
+}
+.farm-action-btn {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: #fff;
+    -fx-font-size: 17px;
+    -fx-background-radius: 14;
+    -fx-padding: 8 32;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #97d96344, 6, 0, 0, 2);
+}
+.farm-action-btn:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+}
+
+
+.settings-panel {
+    -fx-background-color: linear-gradient(to bottom right, #fcffe8 80%, #eafdcb 100%);
+    -fx-background-radius: 22;
+    -fx-padding: 32 38;
+    -fx-effect: dropshadow(gaussian, #b5e08a44, 14, 0.14, 0, 4);
+}
+.settings-title {
+    -fx-font-size: 28px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-text-fill: #39761f;
+    -fx-padding: 0 0 18 0;
+    -fx-effect: dropshadow(gaussian, #e0ffb8, 3, 0.14, 0, 2);
+}
+.settings-btn, .settings-main-btn {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-text-fill: #fff;
+    -fx-font-size: 17px;
+    -fx-font-family: 'Poppins';
+    -fx-background-radius: 14;
+    -fx-padding: 8 28;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, #b5e08a44, 6, 0, 0, 2);
+    -fx-cursor: hand;
+}
+.settings-btn:hover, .settings-main-btn:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+}
+
+
+.sidebar-btn {
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-background-radius: 17;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+    -fx-padding: 11 28;
+    -fx-text-fill: #fff;
+    -fx-effect: dropshadow(gaussian, #b5e08a44, 8, 0.12, 0, 2);
+    -fx-cursor: hand;
+}
+.sidebar-btn:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+}
+
+
+.market-table, .farm-table, .settings-table {
+    -fx-background-radius: 16;
+    -fx-background-color: #fbffe7;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+}
+.market-spinner, .farm-spinner, .settings-spinner {
+    -fx-background-radius: 11;
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+    -fx-border-color: #b5e08a;
+    -fx-border-radius: 11;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+.auth-title {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 32px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #237c2c;
+    -fx-effect: dropshadow(gaussian, #eafdcb, 3, 0.16, 0, 1);
+}
+.auth-subtitle {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 16px;
+    -fx-text-fill: #668153;
+}
+.text-field, .password-field {
+    -fx-font-family: 'Poppins';
+    -fx-background-radius: 10;
+    -fx-font-size: 16px;
+    -fx-background-color: #f9fdf5;
+    -fx-border-color: #b5e08a;
+    -fx-border-radius: 10;
+    -fx-padding: 10 14;
+}
+.button-main {
+    -fx-background-radius: 18;
+    -fx-font-size: 18px;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-background-color: linear-gradient(to right, #6ba539, #4e7f23);
+    -fx-effect: dropshadow(gaussian, #97d96344, 8, 0, 0, 2);
+    -fx-padding: 9 34;
+}
+.button-main:hover {
+    -fx-background-color: linear-gradient(to right, #4e7f23, #6ba539);
+    -fx-text-fill: #fff;
+}
+.link {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 13.5px;
+    -fx-text-fill: #47af31;
+}
+.auth-error {
+    -fx-text-fill: #c22b1f;
+    -fx-font-size: 14px;
+    -fx-font-family: 'Poppins';
+    -fx-padding: 3 0 0 0;
+}
+.auth-left {
+    -fx-background-color: transparent;
+}
+.auth-panel-right {
+    -fx-background-color: linear-gradient(to bottom right, #f7ffea 60%, #f5ffe6 100%);
+    -fx-background-radius: 38;
+    -fx-effect: dropshadow(gaussian, #cce4aa, 32, 0.22, 0, 12);
+}
+.image-glow {
+    -fx-effect: dropshadow(gaussian, #cce4aa, 20, 0.3, 0, 0);
+}
+.hint-text {
+    -fx-font-family: 'Poppins';
+    -fx-font-size: 13.5px;
+    -fx-text-fill: #778765;
+}

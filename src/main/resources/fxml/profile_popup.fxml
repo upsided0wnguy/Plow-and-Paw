@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="main.ui.ProfileController"
+      alignment="CENTER" spacing="32" styleClass="profile-card-glass" prefWidth="430" prefHeight="520">
+
+    <!-- Avatar with Glow -->
+    <StackPane alignment="CENTER">
+        <ImageView fx:id="profileAvatar" fitWidth="104" fitHeight="104" styleClass="profile-avatar-glow"/>
+        <Pane styleClass="avatar-border"/>
+    </StackPane>
+
+    <!-- Name and Username -->
+    <Label fx:id="nameLabel" styleClass="profile-title" text="Farmer Name"/>
+    <Label fx:id="usernameLabel" styleClass="profile-username" text="@username"/>
+
+    <!-- Divider -->
+    <Pane minHeight="3" maxHeight="3" prefHeight="3" style="-fx-background-color: #eafdcb77; -fx-background-radius: 2;"/>
+
+    <!-- Level & Achievements -->
+    <HBox alignment="CENTER" spacing="26" style="-fx-padding: 8 0 0 0;">
+        <Label text="🎖 Level" styleClass="profile-stat-label"/>
+        <Label fx:id="levelLabel" styleClass="profile-stat-value" text="1"/>
+        <Label text="🏆 Achv." styleClass="profile-stat-label"/>
+        <Label fx:id="achievementsLabel" styleClass="profile-stat-value" text="0"/>
+    </HBox>
+
+    <!-- Coins, Gems, XP -->
+    <HBox alignment="CENTER" spacing="38" style="-fx-padding: 12 0 0 0;">
+        <VBox alignment="CENTER" spacing="4">
+            <Label text="💰 Coins" styleClass="profile-stat-label"/>
+            <Label fx:id="coinsLabel" styleClass="profile-stat-value" text="0"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="4">
+            <Label text="💎 Gems" styleClass="profile-stat-label"/>
+            <Label fx:id="gemsLabel" styleClass="profile-stat-value" text="0"/>
+        </VBox>
+        <VBox alignment="CENTER" spacing="4">
+            <Label text="⭐ XP" styleClass="profile-stat-label"/>
+            <Label fx:id="xpLabel" styleClass="profile-stat-value" text="0"/>
+        </VBox>
+    </HBox>
+
+    <Pane minHeight="14"/>
+
+    <Button text="Close" onAction="#handleClose" styleClass="farm-nav" maxWidth="140"/>
+
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

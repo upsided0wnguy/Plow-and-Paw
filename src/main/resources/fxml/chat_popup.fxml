@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import java.net.URL?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="main.ui.ChatController"
+           prefWidth="460" prefHeight="420" styleClass="message-panel">
+
+    <VBox alignment="CENTER" spacing="18">
+        <Label text="💬 Community Chat" styleClass="section-title"/>
+
+        <ScrollPane fx:id="messageScroll" fitToWidth="true" prefHeight="240"
+                    styleClass="chat-scroll">
+            <content>
+                <VBox fx:id="messageList" spacing="6" style="-fx-padding: 8;"/>
+            </content>
+        </ScrollPane>
+
+        <HBox spacing="12" alignment="CENTER">
+            <TextField fx:id="messageInput" promptText="Type your message..."/>
+            <Button text="Send" onAction="#handleSendMessage"/>
+        </HBox>
+
+        <Button text="Close" onAction="#handleClose"/>
+
+        <stylesheets>
+            <URL value="@/css/auth_theme.css"/>
+        </stylesheets>
+    </VBox>
+</StackPane>

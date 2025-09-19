@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+/* Dialog & Popup Panels */
+.dialog-content, .chat-content, .profile-content {
+    -fx-background-color: linear-gradient(to right, #fffbe8, #f6e6d7);
+    -fx-background-radius: 26;
+    -fx-padding: 32 38 24 38;
+    -fx-spacing: 22;
+    -fx-alignment: center;
+    -fx-font-family: 'Poppins';
+}
+
+/* Close/Action Buttons */
+.btn-dialog-close, .btn-popup-close {
+    -fx-background-color: linear-gradient(to right, #f7b267, #f4845f);
+    -fx-background-radius: 14;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+    -fx-padding: 8 32;
+    -fx-effect: dropshadow(gaussian, #f7b26788, 6, 0.08, 0, 2);
+}
+.btn-dialog-close:hover, .btn-popup-close:hover {
+    -fx-background-color: linear-gradient(to right, #f4845f, #f7b267);
+}
+
+/* Profile Styles */
+.profile-title {
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f7b267;
+}
+.profile-username {
+    -fx-font-size: 16px;
+    -fx-text-fill: #888;
+}
+.profile-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f4845f;
+}
+.profile-value {
+    -fx-font-size: 16px;
+    -fx-text-fill: #f7b267;
+    -fx-font-weight: bold;
+}
+.profile-avatar {
+    -fx-background-radius: 55;
+    -fx-effect: dropshadow(gaussian, #f7b267, 7, 0.13, 0, 1);
+}
+
+/* Chat Styles */
+.chat-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f7b267;
+}
+.chat-input {
+    -fx-background-radius: 13;
+    -fx-padding: 8;
+    -fx-font-size: 15px;
+    -fx-background-color: #fffbe8;
+    -fx-border-color: #f7b267;
+    -fx-border-radius: 13;
+    -fx-border-width: 1.3;
+}
+.btn-chat-send {
+    -fx-background-color: linear-gradient(to right, #f7b267, #f4845f);
+    -fx-text-fill: #fff;
+    -fx-background-radius: 13;
+    -fx-font-weight: 700;
+    -fx-font-size: 16px;
+    -fx-padding: 7 30;
+}
+.btn-chat-send:hover {
+    -fx-background-color: linear-gradient(to right, #f4845f, #f7b267);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.ui.InventoryController"
+      spacing="14" alignment="CENTER" style="-fx-background-color:linear-gradient(to bottom,#fcffe8 0%,#f6e6b4 100%);-fx-background-radius:32;-fx-padding:32 48;">
+    <Label text="Barn Inventory" styleClass="farmcard-title"/>
+    <TableView fx:id="inventoryTable" prefWidth="440" prefHeight="320" style="-fx-background-radius:19;">
+        <columns>
+            <TableColumn fx:id="nameCol" text="Name" prefWidth="120"/>
+            <TableColumn fx:id="typeCol" text="Type" prefWidth="100"/>
+            <TableColumn fx:id="amountCol" text="Amount" prefWidth="80"/>
+            <TableColumn fx:id="levelCol" text="Level" prefWidth="100"/>
+        </columns>
+    </TableView>
+    <HBox spacing="16">
+        <Label fx:id="barnUsageLabel" text="Barn Usage: 0 / 0" styleClass="farmcard-stat"/>
+        <Button fx:id="upgradeButton" text="Upgrade" styleClass="farm-btn-main" onAction="#handleUpgrade"/>
+        <Button fx:id="closeBtn" text="Close" styleClass="farm-btn-main" onAction="#handleClose"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>

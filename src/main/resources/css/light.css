@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.root, .label, .button, .text-field, .password-field, .hyperlink {
+    -fx-font-family: 'Poppins', sans-serif;
+}
+
+.root {
+    -fx-background-color: #fcf4e3;
+}
+
+.label {
+    -fx-text-fill: #443e2f;
+}
+
+.button {
+    -fx-background-radius: 16;
+    -fx-background-color: linear-gradient(to right, #f4a259, #e07a5f);
+    -fx-text-fill: #fff;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-padding: 8 32;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #f6bc5a44, 6, 0, 0, 2);
+}
+
+.button:focused, .button:hover {
+    -fx-background-color: linear-gradient(to right, #e07a5f, #f4a259);
+}
+
+.text-field, .password-field {
+    -fx-font-size: 16px;
+    -fx-background-radius: 12;
+    -fx-background-color: #fffbe8;
+    -fx-border-color: #e5c07b;
+    -fx-border-radius: 12;
+    -fx-border-width: 1.2;
+    -fx-text-fill: #443e2f;
+    -fx-padding: 9 14 9 14;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+

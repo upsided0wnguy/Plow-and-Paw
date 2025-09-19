@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="main.ui.AnimalPanelController"
+      spacing="18"
+      alignment="TOP_CENTER"
+      style="-fx-background-color: rgba(255,255,255,0.93); -fx-background-radius: 24; -fx-padding: 36 48; -fx-effect: dropshadow(gaussian,#c2e59c,10,0.16,0,2);">
+    <Label text="Animals" style="-fx-font-size:26px;-fx-font-family:'Poppins';-fx-font-weight:900;-fx-text-fill:#4e7f23;"/>
+    <ListView fx:id="animalList" prefHeight="260" style="-fx-background-radius:16;-fx-font-size:17px;"/>
+    <HBox spacing="18" alignment="CENTER">
+        <Button fx:id="collectBtn" text="Collect All" styleClass="button-main"/>
+        <Button fx:id="feedBtn" text="Feed All" styleClass="button-main"/>
+        <Button fx:id="upgradeBtn" text="Upgrade All" styleClass="button-main"/>
+        <Button fx:id="closeBtn" text="Close" styleClass="button-main"/>
+    </HBox>
+    <Label fx:id="upgradeCostLabel" style="-fx-font-size:15px;-fx-font-weight:bold;-fx-text-fill:#3e923c;"/>
+    <Label fx:id="feedbackLabel" style="-fx-font-size:15px;"/>
+    <stylesheets>
+        <URL value="@/css/auth_theme.css"/>
+    </stylesheets>
+</VBox>
